@@ -7,7 +7,7 @@
 ### Installation
 Install this package with composer:
 ```
-composer require nickurt/laravel-oxxa:dev-master 
+composer require nickurt/laravel-oxxa
 ```
 Add the provider to config/app.php file
 ```php
