@@ -5,11 +5,26 @@ namespace nickurt\Oxxa;
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
+     * Bootstrap the application events.
      *
-     * @var bool
+     * @return void
      */
-    protected $defer = false;
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . '/../config/oxxa.php' => config_path('oxxa.php')
+        ], 'config');
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return ['nickurt\Oxxa\Oxxa', 'Oxxa'];
+    }
 
     /**
      * Register the service provider.
@@ -26,27 +41,5 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         });
 
         $this->app->alias('nickurt\Oxxa\Oxxa', 'Oxxa');
-    }
-
-    /**
-     * Bootstrap the application events.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        $this->publishes([
-            __DIR__.'/../config/oxxa.php' => config_path('oxxa.php')
-        ], 'config');
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['nickurt\Oxxa\Oxxa', 'Oxxa'];
     }
 }
