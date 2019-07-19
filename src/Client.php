@@ -6,26 +6,18 @@ use nickurt\Oxxa\HttpClient\HttpClient;
 
 class Client
 {
-    /**
-     * @var
-     */
+    /** @var \nickurt\Oxxa\HttpClient\HttpClient */
     protected $httpClient;
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $endpoints = [
         'live' => 'https://api.oxxa.com/command.php'
     ];
 
-    /**
-     * @var
-     */
+    /** @var string */
     protected $environment;
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $classes = [
         'domains' => 'Domains',
         'funds' => 'Funds',
@@ -33,9 +25,10 @@ class Client
     ];
 
     /**
-     * @param $method
-     * @param $args
-     * @return mixed
+     * @param string $method
+     * @param array $args
+     * @return Api\Domains|Api\Funds|Api\Identities
+     * @throws \BadMethodCallException
      */
     public function __call($method, $args)
     {
@@ -47,8 +40,9 @@ class Client
     }
 
     /**
-     * @param $name
-     * @return mixed
+     * @param string $name
+     * @return Api\Domains|Api\Funds|Api\Identities
+     * @throws \InvalidArgumentException
      */
     public function api($name)
     {
@@ -62,7 +56,7 @@ class Client
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEnvironment()
     {
@@ -70,7 +64,7 @@ class Client
     }
 
     /**
-     * @param $environment
+     * @param string $environment
      */
     public function setEnvironment($environment)
     {
@@ -78,7 +72,7 @@ class Client
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEndpointUrl()
     {
@@ -86,8 +80,8 @@ class Client
     }
 
     /**
-     * @param $username
-     * @param $password
+     * @param string $username
+     * @param string $password
      */
     public function setCredentials($username, $password)
     {

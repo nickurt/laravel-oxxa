@@ -5,8 +5,8 @@ namespace nickurt\Oxxa\Api;
 class Identities extends AbstractApi
 {
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function add($params)
     {
@@ -14,8 +14,8 @@ class Identities extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function del($params)
     {
@@ -23,8 +23,8 @@ class Identities extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function get($params)
     {
@@ -32,8 +32,8 @@ class Identities extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function list($params = [])
     {
@@ -41,8 +41,8 @@ class Identities extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function upd($params)
     {

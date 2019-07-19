@@ -1,6 +1,8 @@
 ## Laravel Oxxa
-[![GitHub release](https://img.shields.io/github/release/nickurt/laravel-oxxa.svg)](https://github.com/nickurt/laravel-oxxa/releases)
-[![GitHub license](https://img.shields.io/github/license/nickurt/laravel-oxxa.svg)](https://github.com/nickurt/laravel-oxxa)
+[![Latest Stable Version](https://poser.pugx.org/nickurt/laravel-oxxa/v/stable?format=flat-square)](https://packagist.org/packages/nickurt/laravel-oxxa)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Build Status](https://img.shields.io/travis/nickurt/laravel-oxxa/master.svg?style=flat-square)](https://travis-ci.org/nickurt/laravel-oxxa)
+[![Total Downloads](https://img.shields.io/packagist/dt/nickurt/laravel-oxxa.svg?style=flat-square)](https://packagist.org/packages/nickurt/laravel-oxxa)
 ### Table of contents
 - [Installation](#installation)
 - [Tests](#tests)
@@ -9,7 +11,7 @@ Install this package with composer:
 ```
 composer require nickurt/laravel-oxxa
 ```
-Add the provider to config/app.php file
+Add the provider to `config/app.php` file
 ```php
 'nickurt\Oxxa\ServiceProvider',
 ```
@@ -28,6 +30,6 @@ OXXA_DEFAULT_PASSWORD=
 ```
 ### Tests
 ```sh
-phpunit
+composer test
 ```
 - - - 

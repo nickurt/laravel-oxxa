@@ -4,24 +4,18 @@ namespace nickurt\Oxxa;
 
 class Oxxa
 {
-    /**
-     * @var
-     */
+    /** @var \Illuminate\Foundation\Application */
     protected $app;
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $connections = [];
 
-    /**
-     * @var
-     */
+    /** @var \nickurt\Oxxa\Client */
     protected $client;
 
     /**
      * Oxxa constructor.
-     * @param $app
+     * @param \Illuminate\Foundation\Application $app
      */
     public function __construct($app)
     {
@@ -29,9 +23,9 @@ class Oxxa
     }
 
     /**
-     * @param $method
-     * @param $args
-     * @return mixed
+     * @param string $method
+     * @param array $args
+     * @return Api\Domains|Api\Funds|Api\Identities
      */
     public function __call($method, $args)
     {
@@ -39,8 +33,8 @@ class Oxxa
     }
 
     /**
-     * @param null $name
-     * @return Api\Client
+     * @param string|null $name
+     * @return Client
      */
     public function connection($name = null)
     {
@@ -50,7 +44,7 @@ class Oxxa
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDefaultConnection()
     {
@@ -58,8 +52,8 @@ class Oxxa
     }
 
     /**
-     * @param $name
-     * @return Api\Client
+     * @param string $name
+     * @return Client
      */
     protected function get($name)
     {
@@ -67,7 +61,7 @@ class Oxxa
     }
 
     /**
-     * @param $name
+     * @param string $name
      * @return Client
      */
     protected function resolve($name)
@@ -85,8 +79,8 @@ class Oxxa
     }
 
     /**
-     * @param $name
-     * @return mixed
+     * @param string $name
+     * @return array
      */
     protected function getConfig($name)
     {

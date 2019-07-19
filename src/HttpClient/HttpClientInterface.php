@@ -4,9 +4,7 @@ namespace nickurt\Oxxa\HttpClient;
 
 interface HttpClientInterface
 {
-    /**
-     * @return array
-     */
+    /** @return array */
     public function getOptions();
 
     /**

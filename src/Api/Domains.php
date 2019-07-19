@@ -5,8 +5,8 @@ namespace nickurt\Oxxa\Api;
 class Domains extends AbstractApi
 {
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function check($params)
     {
@@ -14,8 +14,8 @@ class Domains extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function del($params)
     {
@@ -23,8 +23,8 @@ class Domains extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function epp($params)
     {
@@ -32,8 +32,8 @@ class Domains extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function inf($params)
     {
@@ -41,8 +41,8 @@ class Domains extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function list($params = [])
     {
@@ -50,8 +50,8 @@ class Domains extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function ns_upd($params)
     {
@@ -59,8 +59,8 @@ class Domains extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function push($params)
     {
@@ -68,8 +68,8 @@ class Domains extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function restore($params)
     {
@@ -77,8 +77,8 @@ class Domains extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function upd($params)
     {

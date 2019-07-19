@@ -2,45 +2,17 @@
 
 namespace nickurt\Oxxa\HttpClient;
 
-use Exception;
-use Http\Client\Exception\NetworkException;
-use Http\Client\Exception\RequestException;
-use Http\Discovery\HttpClientDiscovery;
-use Http\Discovery\MessageFactoryDiscovery;
-use Http\Message\RequestFactory;
-use Psr\Http\Message\RequestInterface;
-
 class HttpClient implements HttpClientInterface
 {
-    /**
-     * @var \Http\Client\HttpClient
-     */
+    /** @var \Http\Client\HttpClient */
     protected $httpClient;
 
-    /**
-     * @var \Http\Message\MessageFactory
-     */
-    protected $requestFactory;
-
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $options = [];
 
     /**
-     * HttpClient constructor.
-     * @param null $httpClient
-     * @param RequestFactory|null $requestFactory
-     */
-    public function __construct($httpClient = null, RequestFactory $requestFactory = null)
-    {
-        $this->httpClient = $httpClient ?: HttpClientDiscovery::find();
-        $this->requestFactory = $requestFactory ?: MessageFactoryDiscovery::find();
-    }
-
-    /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function get($params)
     {
@@ -48,23 +20,23 @@ class HttpClient implements HttpClientInterface
     }
 
     /**
-     * @param $params
+     * @param array $params
      * @param string $httpMethod
      * @param array $headers
      * @param array $options
-     * @return mixed
+     * @return array
      */
     public function request($params, $httpMethod = 'GET', array $headers = [], array $options = [])
     {
-        $fullPath = $this->getOptions()['base_url'].'?'.http_build_query($params);
+        $fullPath = $this->getOptions()['base_url'] . '?' . http_build_query($params);
 
-        $request = $this->requestFactory->createRequest(
+        $response = $this->getClient()->request(
             $httpMethod,
             $fullPath,
-            $headers
+            []
         );
 
-        return $this->sendRequest($request);
+        return json_decode(json_encode(simplexml_load_string($response->getBody())), true);
     }
 
     /**
@@ -84,20 +56,24 @@ class HttpClient implements HttpClientInterface
     }
 
     /**
-     * @param RequestInterface $request
-     * @return mixed
-     * @throws \Http\Client\Exception
+     * @return \GuzzleHttp\Client
      */
-    private function sendRequest(RequestInterface $request)
+    public function getClient()
     {
-        try {
-            $response = $this->httpClient->sendRequest($request);
+        if (!isset($this->client)) {
+            $this->client = new \GuzzleHttp\Client();
 
-            return json_decode(json_encode(simplexml_load_string($response->getBody())), true);
-        } catch (NetworkException $networkException) {
-            throw new NetworkException($networkException->getMessage(), $request, $networkException);
-        } catch (Exception $exception) {
-            throw new RequestException($exception->getMessage(), $request, $exception);
+            return $this->client;
         }
+
+        return $this->client;
+    }
+
+    /**
+     * @param $client
+     */
+    public function setClient($client)
+    {
+        $this->client = $client;
     }
 }

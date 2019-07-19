@@ -6,14 +6,11 @@ use nickurt\Oxxa\Client;
 
 abstract class AbstractApi implements ApiInterface
 {
-    /**
-     * @var Client
-     */
+    /** @var \nickurt\Oxxa\Client */
     public $client;
 
     /**
-     * AbstractApi constructor.
-     * @param Client $client
+     * @param \nickurt\Oxxa\Client $client
      */
     public function __construct(Client $client)
     {
@@ -21,10 +18,10 @@ abstract class AbstractApi implements ApiInterface
     }
 
     /**
-     * @param $parameters
-     * @return mixed
+     * @param array $parameters
+     * @return array
      */
-    protected function request($parameters)
+    protected function request(array $parameters = [])
     {
         $parameters = array_merge([
             'apiuser' => $this->client->getHttpClient()->getOptions()['username'],

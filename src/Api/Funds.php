@@ -5,7 +5,7 @@ namespace nickurt\Oxxa\Api;
 class Funds extends AbstractApi
 {
     /**
-     * @return mixed
+     * @return array
      */
     public function get()
     {
@@ -13,8 +13,8 @@ class Funds extends AbstractApi
     }
 
     /**
-     * @param $params
-     * @return mixed
+     * @param array $params
+     * @return array
      */
     public function list($params = [])
     {
