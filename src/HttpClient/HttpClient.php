@@ -13,6 +13,7 @@ class HttpClient implements HttpClientInterface
     /**
      * @param array $params
      * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($params)
     {
@@ -25,6 +26,7 @@ class HttpClient implements HttpClientInterface
      * @param array $headers
      * @param array $options
      * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function request($params, $httpMethod = 'GET', array $headers = [], array $options = [])
     {
