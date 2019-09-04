@@ -11,14 +11,6 @@ Install this package with composer:
 ```
 composer require nickurt/laravel-oxxa
 ```
-Add the provider to `config/app.php` file
-```php
-'nickurt\Oxxa\ServiceProvider',
-```
-and the facade in the file
-```php
-'Oxxa' => 'nickurt\Oxxa\Facade',
-```
 Copy the config files for the Oxxa-plugin
 ```
 php artisan vendor:publish --provider="nickurt\Oxxa\ServiceProvider" --tag="config"
