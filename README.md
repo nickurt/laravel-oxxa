@@ -1,8 +1,9 @@
 ## Laravel Oxxa
-[![Latest Stable Version](https://poser.pugx.org/nickurt/laravel-oxxa/v/stable?format=flat-square)](https://packagist.org/packages/nickurt/laravel-oxxa)
-[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/nickurt/laravel-oxxa/master.svg?style=flat-square)](https://travis-ci.org/nickurt/laravel-oxxa)
-[![Total Downloads](https://img.shields.io/packagist/dt/nickurt/laravel-oxxa.svg?style=flat-square)](https://packagist.org/packages/nickurt/laravel-oxxa)
+[![Build Status](https://github.com/nickurt/laravel-oxxa/workflows/tests/badge.svg)](https://github.com/nickurt/laravel-oxxa/actions)
+[![Total Downloads](https://poser.pugx.org/nickurt/laravel-oxxa/d/total.svg)](https://packagist.org/packages/nickurt/laravel-oxxa)
+[![Latest Stable Version](https://poser.pugx.org/nickurt/laravel-oxxa/v/stable.svg)](https://packagist.org/packages/nickurt/laravel-oxxa)
+[![MIT Licensed](https://poser.pugx.org/nickurt/laravel-oxxa/license.svg)](LICENSE.md)
+
 ### Table of contents
 - [Installation](#installation)
 - [Tests](#tests)
