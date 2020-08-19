@@ -22,6 +22,7 @@ class Client
         'domains' => 'Domains',
         'funds' => 'Funds',
         'identities' => 'Identities',
+        'nsgroups' => 'NsGroups',
     ];
 
     /**
